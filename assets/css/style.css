@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  color: #1b1b1b;
+  color: #fff;
 }
 
 a:hover {
@@ -331,7 +331,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav a {
   display: block;
   position: relative;
-  color: #01036f;
+  color: #1b1b1b;
   padding: 10px 20px;
   font-weight: 500;
   outline: none;
@@ -374,7 +374,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   position: fixed;
-  background: rgba(13, 18, 252, 0.6);
+  background: rgba(27, 27, 27, 0.91);
   overflow: hidden;
   display: none;
   transition: ease-in-out 0.2s;
@@ -1526,7 +1526,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #fcc240;
+  background: #1b1b1b;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
@@ -1669,7 +1669,7 @@ section {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
-  color: #1b1b1b;
+  color: #fff;
 }
 
 @media (max-width: 575px) {
