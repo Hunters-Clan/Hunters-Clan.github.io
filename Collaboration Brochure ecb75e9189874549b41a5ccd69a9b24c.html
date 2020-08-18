@@ -1,0 +1,633 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Collaboration Brochure</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4d813f5f-3128-4a91-bd00-3189cd3a4600" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/solid_yellow.png" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Adobe_Post_20200524_1016400.49197019123395713.png"/></div><h1 class="page-title">Collaboration Brochure</h1></header><div class="page-body"><hr id="356cab70-332a-41db-adff-835e6a2d1925"/><h2 id="67304298-bfec-462f-a8e0-3304688064e9" class="">About Us</h2><figure class="block-color-brown_background callout" style="white-space:pre-wrap;display:flex" id="21116649-cc51-4fa5-be75-39c384c6aa1e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Our Story : Lockdown - Boredom + Fun + Knowledge = Hunters Clan</div></figure><p id="5808faec-b500-4b76-b09b-3beb2ab95450" class="">Hunters Clan was born out of the idle minds of a group of young graduates planning to revolutionise online learning and content publishing more <em>interactive</em> and <em>engaging.</em></p><h2 id="c08b85f3-ab87-4c23-9b0c-2668dad0a52b" class="">What do we do?</h2><p id="5a4c6f94-b12c-40b4-9a61-f6d383ed3354" class="">We conduct online/offline treasure hunts with 2 distinct <em>objectives</em></p><ol id="96811c6c-cfbb-4354-a623-0a332677dfd7" class="numbered-list" start="1"><li><strong>Learning through Quizzing</strong> : We create content based on client requirements so that the addressing crowd could be taught the desired content more actively in a fun way.</li></ol><ol id="e5eae429-7a94-4804-b94c-3ec09cc56461" class="numbered-list" start="2"><li><strong>Event Quizzing</strong> : Tailor made contents are created to ensure the client enjoys better audience reach and brand awareness.</li></ol><p id="4f42fe03-d256-4cee-bf88-17af36aa05b6" class="">
+</p><h2 id="965f8424-8265-4524-adf5-70ff6d55a147" class="">Why Hunter&#x27;s Clan?</h2><h3 id="deb72f34-8433-4384-8a70-4176d50118ef" class="">Learning through quizzing</h3><ul id="dc2775fa-83bd-4906-906f-09d71fff86af" class="bulleted-list"><li>Contents are created based on the required theme and ensures the audience attains the crux by the end of the game</li></ul><ul id="a96ac32b-baf5-4477-aa95-879100c264ac" class="bulleted-list"><li>Difficulty level is set to target the right audience.</li></ul><ul id="a4e0600b-3dda-4f2e-a1cc-074505e61ab3" class="bulleted-list"><li>Activity enhances team building skills among peers ( more of a why content )</li></ul><h3 id="abdc03be-619d-436a-ae65-e6806f0f8ba7" class="">Event Quizzing</h3><ul id="2008e663-5ef1-4222-a40a-8ae08b9ebe20" class="bulleted-list"><li>Custom made content helps create a lasting impression on the event/brand among the audience</li></ul><ul id="ceb09850-be18-4e22-bf53-2c3b755c7525" class="bulleted-list"><li>Interactive quiz increases user traffic growth</li></ul><ul id="37d0dde7-37b5-4887-9fe2-5c4a0c3adc3d" class="bulleted-list"><li>Team activities helps increase audience reach</li></ul><h2 id="86c9fc07-7bde-43f9-ae90-a86d409ea487" class="">How do we do?</h2><p id="f9235f1e-af90-443c-9750-9f9b22914a28" class="">Ordinary online treasure hunts are based on PDF encryption. It is flawed as  it is not strong enough to withstand cheaters. Here, we are doing it by a CTFd based web platform, hosted online and built with automatic brute force protection to keep out cheaters.</p><h3 id="64948066-e037-4377-8ea5-26eeb0a6c616" class="">What is CTFd?</h3><p id="784f4fe9-76b1-4370-8acc-343e51546f5c" class="">It is an <em>open source</em> Capture The Flag (CTF) framework for hackers.
+It is basically a super secure framework to build a website that can be used to host CTF events.</p><div id="54c3a1af-b341-4336-aa33-aec886f61adc" class="column-list"><div id="5399c1bc-38f2-4fed-8fed-0948be9f7d08" style="width:12.5%" class="column"><p id="0d358009-b23f-408d-8544-6f92339b0197" class="block-color-blue"><a href="http://ctfd.io">CTFd</a></p></div><div id="e4fcdffd-f7fb-458a-8f59-3d33164c41f9" style="width:87.5%" class="column"><p id="1863c60b-7fbb-4009-9cba-18f1add49180" class=""><mark class="highlight-blue"><a href="https://ctfd.io/whats-a-ctf/">CTF</a></mark></p></div></div><h2 id="48b85527-a384-44b4-bdb3-8a9db4460910" class="">The Game Design</h2><hr id="978824f3-695d-437e-88b3-0bd5058cb3b9"/><p id="0b03e67b-205b-4cb0-b32f-8558b31b757e" class="">Treasure hunt games are series of challenges that gets unlocked one after other, when solved. These challenges are puzzles that are designed according to the theme of the event. These challenges are designed in way to think out of the box and these challenges when solved gives immense pleasure out of satisfaction.</p><p id="8c35c6d3-dba0-42e3-8565-f1e949e9c379" class="">We do this in a user-friendly interface with real time statistics to bring the competitive mind in everyone to action. </p><h3 id="af6fd9eb-cfc9-46a8-a80e-7d5bd68159fd" class="">Game Play</h3><p id="6a907a8d-c5fe-4acd-8cfe-2f747cccd672" class=""><strong>Step 1</strong>: Game will be hosted at <mark class="highlight-blue"><a href="http://www.huntersclan.games/">www.huntersclan.games</a></mark><mark class="highlight-blue">.</mark></p><figure id="ecb75e91-8987-4549-b41a-5ccd69a9b24c" class="image"><a href="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.28.52_PM.jpg"><img style="width:240px" src="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.28.52_PM.jpg"/></a></figure><p id="a9bc3d0f-34d6-45ef-95dd-a8004ab3648e" class=""><strong>Step 2</strong>: Players can login 1hr before the game launch with the credentials provided and can check for issues, so that we can solve any issues regarding player credentials.</p><figure id="5dfea0f4-eb25-4480-87fd-e2e5a3248d7b" class="image"><a href="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.30.35_PM.jpg"><img style="width:240px" src="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.30.35_PM.jpg"/></a></figure><p id="04cdceb8-9d18-405b-90e3-c1603b099bed" class="">
+</p><p id="5622dd76-8214-4e7c-a89d-59107d8e6a5c" class=""><strong>Step 3</strong>: There will be number of challenges to unlock and solve. Next challenge will be unlocked only if first one is solved, and thereby completing all challenges and finding the treasure. Unlocked challenges appear in green colour.</p><figure id="aff67588-d110-4556-a061-820d9a83d175" class="image"><a href="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.36.26_PM.jpg"><img style="width:240px" src="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.36.26_PM.jpg"/></a></figure><p id="ffe4e47a-c619-4a1c-abc5-18455d570dd4" class=""><strong>Step 4</strong>: Download attached files with each challenge to find Supporting documents.</p><figure id="d53f238a-006e-4956-8031-f345283f48d1" class="image"><a href="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.36.16_PM.jpg"><img style="width:240px" src="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.36.16_PM.jpg"/></a></figure><p id="1f402925-49ae-4737-956d-858c59be7553" class=""><strong>Step 4:</strong> Each challenge holds a certain point. Players are ranked in real time based on the scores. Tie breaks are automatically solved by time of completion of challenge.</p><figure id="e4651c92-44c9-4f87-820d-0258d72b9ba0" class="image"><a href="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.48.54_PM.jpg"><img style="width:240px" src="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.48.54_PM.jpg"/></a></figure><p id="745189f8-4f29-4a0a-a2fe-557a6615e05b" class=""><strong>Step 5</strong>: Real time statistics and scoreboard can be accessed from the menu bar.</p><figure id="268f2a81-ee38-4ece-b4e0-09a5d4737ceb" class="image"><a href="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.48.41_PM.jpg"><img style="width:240px" src="Collaboration%20Brochure%20ecb75e9189874549b41a5ccd69a9b24c/Screenshot_2020-05-29_at_6.48.41_PM.jpg"/></a></figure><p id="886309ab-4e99-4bc7-9e1f-2fffe8f33172" class="">
+</p><figure class="block-color-brown_background callout" style="white-space:pre-wrap;display:flex" id="4e3c0881-36d4-472b-b22e-11a8c0c43dff"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">After each game, a statistics report is shared with the event coordinators.</div></figure><p id="11755d7d-3aa8-4ba4-bbb2-3c24f04c1d2d" class="">
+</p><hr id="432e9bb6-1ac5-4e68-aefc-7f428922b570"/><h2 id="bb0115e2-fd12-44c0-883f-c95256576526" class="">Features</h2><ul id="fc931d87-4e9c-40aa-ae1d-debb23849c68" class="bulleted-list"><li>Automatic competition starting and ending based on the pre planned timing.</li></ul><ul id="4cf22421-35a9-47fc-9f64-a639bd2cf8bb" class="bulleted-list"><li>Score board with automatic tie resolution.</li></ul><ul id="3811e1ef-f1c0-4d46-b348-67e444fcd90e" class="bulleted-list"><li>Score graphs of top 10 players/teams and their progress.</li></ul><ul id="b452c53b-cb77-452b-a8cc-2b2b9cd8361b" class="bulleted-list"><li>Online support via mail.</li></ul><ul id="034fca5d-5da8-400c-aacb-0fe1e138a55f" class="bulleted-list"><li>Clean and easy Interface which easy to understand and play.</li></ul><ul id="12ff6680-1456-4943-ba4a-94579195d9aa" class="bulleted-list"><li>In game notifications to help and direct players.</li></ul><hr id="329f2859-2ce2-4b7b-85ee-982e11b63675"/><h2 id="3b49d5ee-1ea2-4e64-8917-f68cf9a25766" class="">Contact</h2><figure class="block-color-brown_background callout" style="white-space:pre-wrap;display:flex" id="fddeb318-449d-41c0-9987-3035e5a8fed0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Mail: collaborations@huntersclan.games
+Phone: ‭94959 29800</div></figure></div></article></body></html>
